@@ -32,18 +32,18 @@ final case class GMol(molecule : String,
 }
 
 class OpenbabelApi extends Actor with ActorLogging {
-	import OpenbabelProtocol._
+  import OpenbabelProtocol._
 
-	def receive = {
+  def receive = {
 
-		case req: MolIn => 
-			val captSender  = sender
-			val gm = new GMol(req.mol, 
-												req.inFormat, 
-												req.outFormat)
-	    val mol = gm.mol
-	    val conv = gm.conv
-	    gm.gen2d.Do(mol)
-	    captSender ! MolOut( conv.WriteString(mol) )
-	}
+    case req: MolIn => 
+      val captSender  = sender
+      val gm = new GMol(req.mol, 
+                        req.inFormat, 
+                        req.outFormat)
+      val mol = gm.mol
+      val conv = gm.conv
+      gm.gen2d.Do(mol)
+      captSender ! MolOut( conv.WriteString(mol) )
+  }
 }
