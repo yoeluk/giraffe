@@ -5,7 +5,7 @@ import com.typesafe.config.ConfigFactory
 import spray.can.Http
 import spray.can.Http.Bind
 
-object BtcfestFrontend extends App {
+object GiraffeFrontend extends App {
   
   class FrontendRestInterface extends RestInterface with RemoteOpenbabelApiCreator
 
