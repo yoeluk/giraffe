@@ -3,13 +3,13 @@
 Use the docker command to pull the docker image from docker-hub
 
 ```
-$ sudo docker pull yoeluk/giraffe
+$ [sudo] docker pull yoeluk/giraffe
 ```
 
 Optionally, you may want to download just the openbabel image ```sudo docker pull yoeluk/openbabel```. You can run the giraffe image.
 
 ```
-$ sudo docker run -p 2552:2552 -t yoeluk/giraffe
+$ [sudo] docker run -p 2552:2552 -t yoeluk/giraffe
 ```
 
 You can put the running process in the background with ```ctr + c```
